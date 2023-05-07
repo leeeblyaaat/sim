@@ -13398,7 +13398,7 @@ function lipsyncDesc() {
         }
     }
     screen.createHeader("It's time...");
-    else screen.createBold("For you to lip-sync... for your lives! Good luck, and don't fuck it up.");
+    screen.createBold("For you to lip-sync... for your lives! Good luck, and don't fuck it up.");
     let song = lsSong().toString();
     screen.createHorizontalLine();
     let event = checkForLipsyncEvent(bottomQueens);
