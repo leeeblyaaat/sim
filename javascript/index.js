@@ -13398,8 +13398,32 @@ function lipsyncDesc() {
         }
     }
     screen.createHeader("It's time...");
-    screen.createBold("For you to lip-sync... for your lives! Good luck, and don't fuck it up.");
-    let song = lsSong().toString();
+    if (dragula == true) {
+        screen.createBold("For the extermination challenge! Try not to fuck it up.");
+        let event = checkForLipsyncEvent(bottomQueens);
+    if (event != false) {
+        let eventQueen = bottomQueens.find( (q) => {
+            return q.getName() == event.queen.getName()
+        });
+        eventQueen.lipsyncScore += event.points;
+    }
+        screen.createHorizontalLine();
+    let slay = bottomQueens.filter(function (queen) { return queen.lipsyncScore > 11; });
+    let great = bottomQueens.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
+    let good = bottomQueens.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
+    let bad = bottomQueens.filter(function (queen) { return queen.lipsyncScore >= 2 && queen.lipsyncScore < 4; });
+    let flop = bottomQueens.filter(function (queen) { return queen.lipsyncScore >= -10 && queen.lipsyncScore < 2; });
+    toBlots(bottomQueens, song);
+    if (!riggoryLipsync) {
+        for (let i = 0; i < bottomQueens.length; i++) {
+            bottomQueens[i].lipsyncScore = (bottomQueens[i].lipsyncScore + bottomQueens[i].favoritism) - bottomQueens[i].unfavoritism;
+        }
+    }
+    createLipsyncDesc(slay, great, good, bad, flop);
+        screen.createButton("Show result", "lipSync()");
+    }
+    else {screen.createBold("For you to lip-sync... for your lives! Good luck, and don't fuck it up.");
+    let song = lsSong().toString();}
     screen.createHorizontalLine();
     let event = checkForLipsyncEvent(bottomQueens);
     if (event != false) {
