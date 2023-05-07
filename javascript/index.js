@@ -2003,11 +2003,12 @@ function uk3PremiereJudging2() {
     for (let i = 0; i < bottomQueens.length; i++) {
         btm2.innerHTML += bottomQueens[i].getName() + ", ";
     }
-    if (dragula == true)
+    if (dragula == true) {
 		btm2.innerHTML += "I'm sorry my dears but you are up for extermination.";
-        else if (dragula == false)
+        screen.createButton("Proceed", "lipsync()");}
+        else if (dragula == false) {
     btm2.innerHTML += "I'm sorry my dears but you are up for elimination.";
-    screen.createButton("Proceed", "lipsyncDesc()");
+    screen.createButton("Proceed", "lipsyncDesc()"); }
 }
 let currentCast = [];
 let eliminatedCast = [];
