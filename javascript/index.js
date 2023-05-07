@@ -2006,9 +2006,9 @@ function uk3PremiereJudging2() {
     if (dragula == true) {
 		btm2.innerHTML += "I'm sorry my dears but you are up for extermination.";
         screen.createButton("Proceed", "lipsync()");}
-        else if (dragula == false) {
+    else if (dragula == false) {
     btm2.innerHTML += "I'm sorry my dears but you are up for elimination.";
-    screen.createButton("Proceed", "lipsyncDesc()"); }
+    screen.createButton("Proceed", "lipsync()"); }
 }
 let currentCast = [];
 let eliminatedCast = [];
