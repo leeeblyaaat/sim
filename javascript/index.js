@@ -13401,8 +13401,15 @@ function lipsyncDesc() {
     if (dragula == true) {
         screen.createBold("For the extermination challenge! Try not to fuck it up.");
 		extermation();
+         let event = checkForLipsyncEvent(bottomQueens);
+    if (event != false) {
+        let eventQueen = bottomQueens.find( (q) => {
+            return q.getName() == event.queen.getName()
+        });
+        eventQueen.lipsyncScore += event.points;
+    }
         screen.createHorizontalLine();
-        let slay = bottomQueens.filter(function (queen) { return queen.lipsyncScore > 11; });
+    let slay = bottomQueens.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = bottomQueens.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = bottomQueens.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
     let bad = bottomQueens.filter(function (queen) { return queen.lipsyncScore >= 2 && queen.lipsyncScore < 4; });
