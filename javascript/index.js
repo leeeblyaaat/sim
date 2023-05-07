@@ -2003,12 +2003,11 @@ function uk3PremiereJudging2() {
     for (let i = 0; i < bottomQueens.length; i++) {
         btm2.innerHTML += bottomQueens[i].getName() + ", ";
     }
-    if (dragula == true) {
+    if (dragula == true) 
 		btm2.innerHTML += "I'm sorry my dears but you are up for extermination.";
-        screen.createButton("Proceed", "lipsync()");}
-    else if (dragula == false) {
+    else (dragula == false) 
     btm2.innerHTML += "I'm sorry my dears but you are up for elimination.";
-    screen.createButton("Proceed", "lipsync()"); }
+    screen.createButton("Proceed", "lipsync()"); 
 }
 let currentCast = [];
 let eliminatedCast = [];
@@ -7550,7 +7549,7 @@ function lipSync() {
 		screen.createBold("For the extermination challenge! Try not to fuck it up.");
 		extermation();
 	}
-	else if (dragula == false) {
+	else {
 		screen.createBold("For you to lip-sync... for your lives! Good luck, and don't fuck it up.");
 		lsSong();
 	}
