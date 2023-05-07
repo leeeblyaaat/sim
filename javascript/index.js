@@ -13354,6 +13354,8 @@ let lipsyncsEventsBad = [
 let lipsyncsEventsGood = [
     {event: "did the best split of the season!", points: 5},
     {event: "did an amazing reveal!", points: 5},
+    {event: "did a revel into monkey!", points: 5},
+    {event: "didi a revel into varya kisel", points: 5},
     {event: "pretend to be tipped by the audience.", points: 4},
     {event: "embodied the song.", points: 3},
     {event: "knew every single word of the song.", points: 3},
@@ -13396,8 +13398,12 @@ function lipsyncDesc() {
         }
     }
     screen.createHeader("It's time...");
-    screen.createBold("For you to lip-sync... for your lives! Good luck, and don't fuck it up.");
-    let song = lsSong().toString();
+    if (dragula == true) {
+        screen.createBold("For the extermination challenge! Try not to fuck it up.");
+		extermation();
+    }
+    else {screen.createBold("For you to lip-sync... for your lives! Good luck, and don't fuck it up.");
+    let song = lsSong().toString();}
     screen.createHorizontalLine();
     let event = checkForLipsyncEvent(bottomQueens);
     if (event != false) {
@@ -13420,6 +13426,7 @@ function lipsyncDesc() {
     createLipsyncDesc(slay, great, good, bad, flop);
     screen.createButton("Show result", "lipSync()");
 }
+
 function teamLipSyncDesc() {
     let screen = new Scene();
     screen.clean();
